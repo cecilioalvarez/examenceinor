@@ -13,7 +13,7 @@ namespace Windows1
 {
     public partial class Form1 : Form
     {
-        BindingList<Persona> binding;
+        BindingList<Person> binding;
 
         public Form1()
         {
@@ -22,16 +22,16 @@ namespace Windows1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            IPersonaService servicio = new PersonaService();
-            binding = new BindingList<Persona>(servicio.BuscarTodos());
+            IPersonService service = new PersonService();
+            binding = new BindingList<Person>(service.FindAll());
             dataGridView1.DataSource = binding;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            IPersonaService servicio = new PersonaService();
-            servicio.InsertarPersona(new Persona(textBox1.Text, textBox2.Text, Int32.Parse(textBox3.Text)));
-            binding = new BindingList<Persona>(servicio.BuscarTodos());
+            IPersonService servicio = new PersonService();
+            servicio.InsertPerson(new Person(textBox1.Text, textBox2.Text, Int32.Parse(textBox3.Text)));
+            binding = new BindingList<Person>(servicio.FindAll());
             dataGridView1.DataSource = binding;
 
         }
