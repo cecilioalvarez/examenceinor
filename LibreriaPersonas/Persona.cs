@@ -32,5 +32,7 @@ namespace LibreriaPersonas
             hashCode = hashCode * -1521134295 + Edad.GetHashCode();
             return hashCode;
         }
+
+
     }
 }
