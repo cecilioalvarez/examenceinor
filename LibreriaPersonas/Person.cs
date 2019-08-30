@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibreriaPersonas
+namespace PersonsLibrary
 {
     public class Person
     {
